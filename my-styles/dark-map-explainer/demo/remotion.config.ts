@@ -1,0 +1,11 @@
+import { Config } from "@remotion/cli/config";
+import fs from "fs";
+const candidates = [process.env.REMOTION_BROWSER, "/opt/google/chrome/chrome", "/usr/bin/google-chrome", "/usr/bin/google-chrome-stable"].filter(Boolean) as string[];
+const found = candidates.find((p) => fs.existsSync(p));
+if (found) Config.setBrowserExecutable(found);
+Config.setVideoImageFormat("jpeg");
+Config.setJpegQuality(90);
+Config.setCodec("h264");
+Config.setPixelFormat("yuv420p");
+Config.setPublicDir("public");
+Config.setOverwriteOutput(true);
