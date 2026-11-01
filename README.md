@@ -2,9 +2,9 @@
 
 # Lemo-Opuscar
 
-**A toolbox of film styles made in code: <!--n-->59<!--/n--> ready to use, and your own.**<br>
+**A toolbox of film styles made in code: <!--n-->66<!--/n--> ready to use, and your own.**<br>
 Pick a style or make one from scratch, bring your story, and let your coding agent direct.<br>
-<sub><!--n-->59<!--/n--> 种影片风格，每种都配一支完全用代码做出来的短片 · 🇨🇳 中文用户请看 <a href="README.zh-CN.md">简体中文说明</a></sub>
+<sub><!--n-->66<!--/n--> 种影片风格，每种都配一支完全用代码做出来的短片 · 🇨🇳 中文用户请看 <a href="README.zh-CN.md">简体中文说明</a></sub>
 
 <a href="https://lemomo-ai.github.io/lemo-opuscar/"><img alt="Watch the gallery" src="https://img.shields.io/badge/-%E2%96%B6%20Watch%20the%20gallery-E8553A?style=for-the-badge"></a> <a href="README.zh-CN.md"><img alt="简体中文" src="https://img.shields.io/badge/README-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-555?style=for-the-badge"></a> <a href="https://github.com/lemomo-ai/lemo-opuscar/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/lemomo-ai/lemo-opuscar?style=for-the-badge&color=F5B700&label=stars"></a> <a href="#licence"><img alt="MIT · CC BY 4.0" src="https://img.shields.io/badge/licence-MIT%20%C2%B7%20CC%20BY%204.0-2EA44F?style=for-the-badge"></a>
 
@@ -13,6 +13,7 @@ Pick a style or make one from scratch, bring your story, and let your coding age
 ⚠️ **Built for Claude.** The styles are tuned for Claude Opus 5.5;<br>
 other models may not reproduce them well, so use them with care.
 
+🆕 **2026-10-29 · [7 new styles](https://lemomo-ai.github.io/lemo-opuscar/)**: a Memphis diorama by [@EianLu](https://x.com/EianLu), a metro map, a chalkboard and more. [See them ↓](#the-styles)<br>
 🆕 **2026-10-22 · [Edit & Documentary](https://lemomo-ai.github.io/lemo-opuscar/#edit-documentary)**: 8 styles cut from real footage, documents and data. [See them ↓](#edit--documentary)<br>
 🆕 **2026-10-22 · [Make a style your own](#make-a-style-your-own)**: change a style or start blank, and keep it. [See how ↓](#make-a-style-your-own)<br>
 🆕 **2026-10-16 · [Evidence Films](https://lemomo-ai.github.io/lemo-opuscar/#evidence-films)**: 8 styles that film real material, every number sourced. [See them ↓](#evidence-films)
@@ -120,7 +121,7 @@ Everyone wants something different: their own brand colours, logo, characters, t
 
 > Start from a blank page: a chalk-on-blackboard style, warm and slow.
 
-- **Change a library style**: it lists all 59 with the gallery link, and you type the one to change.
+- **Change a library style**: it lists every style with the gallery link, and you type the one to change.
 - **Start from a blank page**: describe the look in your own words, or share a picture or a film you like. Claude picks the closest library style as the technique base, tells you why, and you agree or pick another.
 
 **Then five steps:**
@@ -143,7 +144,7 @@ Library updates and reinstalling never touch them. When the base style is update
 ### Before you start
 
 - A film takes an agent about 30–60 minutes and a fair amount of tokens.
-- You need Node 20+, ffmpeg and Python 3.11+ (or [uv](https://docs.astral.sh/uv/)); the agent installs the rest.
+- You need Node 20+, ffmpeg 7+ and Python 3.11+ (or [uv](https://docs.astral.sh/uv/)); the agent installs the rest. Ubuntu 24.04 ships ffmpeg 6.1, which is too old: use a [static build](https://johnvansickle.com/ffmpeg/).
 - Default output 1920×1080, 24 fps; other sizes on request.
 
 ### Update or uninstall
@@ -171,6 +172,24 @@ If a step stays stuck, [open an issue](https://github.com/lemomo-ai/lemo-opuscar
 Click a frame for its `STYLE.md`.
 
 <!-- styles:start -->
+
+### 🆕 New · 2026-10-29
+
+<table>
+<tr>
+<td width="33%" valign="top"><a href="styles/memphis-diorama/STYLE.md"><img src="docs/frames/memphis-diorama.jpg" alt="Memphis Diorama"></a><br><b>Memphis Diorama</b><br><i>Four Seasons in Pomelo Town</i><br><sub>One river bend, four seasons, one take; each turns when the big tree squats and springs back.</sub><br><sub>Contributed by <a href="https://x.com/EianLu">@EianLu</a></sub></td>
+<td width="33%" valign="top"><a href="styles/transit-map/STYLE.md"><img src="docs/frames/transit-map.jpg" alt="Transit Map"></a><br><b>Transit Map</b><br><i>6 Kilometres</i><br><sub>A printed metro map grows from one 6 km line in 1993 to 21 lines and 906 km.</sub></td>
+<td width="33%" valign="top"><a href="styles/chalkboard/STYLE.md"><img src="docs/frames/chalkboard.jpg" alt="Chalkboard"></a><br><b>Chalkboard</b><br><i>The Story of Chinese Characters</i><br><sub>Chalk writes a popular claim about two characters, wipes it, and traces 射 back three thousand years.</sub></td>
+</tr>
+<tr>
+<td width="33%" valign="top"><a href="styles/isometric-picture-book/STYLE.md"><img src="docs/frames/isometric-picture-book.jpg" alt="Isometric Picture Book"></a><br><b>Isometric Picture Book</b><br><i>Seventy-Two Seats</i><br><sub>Travellers board an isometric plane, and the order shows why one way is nearly twice as fast.</sub></td>
+<td width="33%" valign="top"><a href="styles/printed-long-take/STYLE.md"><img src="docs/frames/printed-long-take.jpg" alt="Printed Long Take"></a><br><b>Printed Long Take</b><br><i>Thirty-Three Cranes</i><br><sub>Red-crowned cranes in a Hokkaido valley, one scratchboard take, counted back from 33 to 1,927.</sub></td>
+<td width="33%" valign="top"><a href="styles/circuit-board/STYLE.md"><img src="docs/frames/circuit-board.jpg" alt="Circuit Board"></a><br><b>Circuit Board</b><br><i>Seven Milliseconds</i><br><sub>Rivers become copper traces as current runs 2,080 km from a dam to a phone charger.</sub></td>
+</tr>
+<tr>
+<td width="33%" valign="top"><a href="styles/desktop-flythrough/STYLE.md"><img src="docs/frames/desktop-flythrough.jpg" alt="Desktop Flythrough"></a><br><b>Desktop Flythrough</b><br><i>Before the Ding</i><br><sub>A cat photo hops across app cards on a sunlit desk, from one phone to a friend&#x27;s.</sub></td>
+</tr>
+</table>
 
 ### Edit & Documentary
 
@@ -237,7 +256,7 @@ Click a frame for its `STYLE.md`.
 <td width="33%" valign="top"><a href="styles/papercut-red/STYLE.md"><img src="docs/frames/papercut-red.jpg" alt="Red Paper-cut"></a><br><b>Red Paper-cut</b><br><i>Nian Comes to Town</i><br><sub>On New Year&#x27;s Eve the beast Nian comes to town, and one girl&#x27;s giant paper-cut lights up the village to scare it off.</sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top"><a href="styles/paper-lantern/STYLE.md"><img src="docs/frames/paper-lantern.jpg" alt="Paper-cut Lightbox"></a><br><b>Paper-cut Lightbox</b><br><i>A Mooncake&#x27;s Longing</i><br><sub>A single mooncake tells the Mid-Autumn story of reunion and longing inside a glowing paper-cut lightbox.</sub></td>
+<td width="33%" valign="top"><a href="styles/paper-lantern/STYLE.md"><img src="docs/frames/paper-lantern.jpg" alt="Paper-cut Lightbox"></a><br><b>Paper-cut Lightbox</b><br><i>The Last Night Train</i><br><sub>An old night train makes its last run, from a snowy mountain halt through a long tunnel to the sea, its lit windows going out one by one at the end of the line.</sub></td>
 </tr>
 </table>
 
@@ -251,7 +270,7 @@ Click a frame for its `STYLE.md`.
 </tr>
 <tr>
 <td width="33%" valign="top"><a href="styles/engraving/STYLE.md"><img src="docs/frames/engraving.jpg" alt="Copperplate Engraving"></a><br><b>Copperplate Engraving</b><br><i>The Honeybee, Plate VII</i><br><sub>A natural-history plate engraves itself: the burin cuts the copper, the bee builds up line by line, and a watercolour wash brings it to life.</sub></td>
-<td width="33%" valign="top"><a href="styles/silkscreen-poster/STYLE.md"><img src="docs/frames/silkscreen-poster.jpg" alt="Silkscreen Travel Poster"></a><br><b>Silkscreen Travel Poster</b><br><i>Three Trails</i><br><sub>Three trail posters are screen-printed one ink at a time, then climbed in one long take from noon to dusk.</sub></td>
+<td width="33%" valign="top"><a href="styles/silkscreen-poster/STYLE.md"><img src="docs/frames/silkscreen-poster.jpg" alt="Silkscreen Travel Poster"></a><br><b>Silkscreen Travel Poster</b><br><i>The Long Way Home</i><br><sub>A traveller crosses the world one full-bleed screen print at a time, a ticket stub counting the distance from home, until the far side turns into the way back.</sub></td>
 </tr>
 </table>
 
@@ -266,7 +285,7 @@ Click a frame for its `STYLE.md`.
 <tr>
 <td width="33%" valign="top"><a href="styles/blueprint/STYLE.md"><img src="docs/frames/blueprint.jpg" alt="Blueprint"></a><br><b>Blueprint</b><br><i>Patent Pending: The Cloud Catcher</i><br><sub>An inventor&#x27;s blueprint draws, explodes and assembles a cloud-catching machine, and its revision cloud starts to rain.</sub></td>
 <td width="33%" valign="top"><a href="styles/stained-glass/STYLE.md"><img src="docs/frames/stained-glass.jpg" alt="Stained Glass"></a><br><b>Stained Glass</b><br><i>The Dragon of the East Window</i><br><sub>Sunlight crosses a cathedral window from dawn to dusk, waking each pane of a knight-and-dragon tale.</sub></td>
-<td width="33%" valign="top"><a href="styles/pictogram-motion/STYLE.md"><img src="docs/frames/pictogram-motion.jpg" alt="Pictogram Motion"></a><br><b>Pictogram Motion</b><br><i>Aichi-Nagoya 2026 — All 43 Sports</i><br><sub>All 43 sports of the 2026 Asian Games as beat-locked geometric pictograms.</sub></td>
+<td width="33%" valign="top"><a href="styles/pictogram-motion/STYLE.md"><img src="docs/frames/pictogram-motion.jpg" alt="Pictogram Motion"></a><br><b>Pictogram Motion</b><br><i>Left Behind</i><br><sub>A yellow umbrella left on a bus waits out a sunny day on the lost-property shelf, then opens with 312 others when the storm comes back: objects, vehicles, weather and signs as beat-locked geometric pictograms.</sub></td>
 </tr>
 <tr>
 <td width="33%" valign="top"><a href="styles/ascii-crt/STYLE.md"><img src="docs/frames/ascii-crt.jpg" alt="ASCII / CRT Terminal"></a><br><b>ASCII / CRT Terminal</b><br><i>Tranquility.log</i><br><sub>A moon-base AI wakes after forty years to a signal from Earth, and replies by drawing “home” in characters.</sub></td>

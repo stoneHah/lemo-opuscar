@@ -391,6 +391,23 @@
   "dur": 32.4
  },
  {
+  "slug": "chalkboard",
+  "num": "73",
+  "en": "Chalkboard",
+  "cn": "黑板粉笔",
+  "cat": "手绘与绘画",
+  "cat_en": "Hand-drawn & Painting",
+  "film": "The Story of Chinese Characters",
+  "line": "Chalk writes a popular claim about two characters, wipes it, and traces 射 back three thousand years.",
+  "line_cn": "粉笔写下网上的说法，再一擦，把「射」写回三千年前。",
+  "uses": [
+   "Word origins",
+   "Myth-busting",
+   "Lessons"
+  ],
+  "dur": 49.3
+ },
+ {
   "slug": "shadow-puppet",
   "num": "07",
   "en": "Shadow Puppetry",
@@ -448,15 +465,15 @@
   "cn": "纸雕灯影",
   "cat": "东方传统",
   "cat_en": "East Asian Traditions",
-  "film": "A Mooncake's Longing",
-  "line": "A single mooncake tells the Mid-Autumn story of reunion and longing inside a glowing paper-cut lightbox.",
-  "line_cn": "一枚月饼讲中秋的团圆与思念，纸雕灯箱层层透光。",
+  "film": "The Last Night Train",
+  "line": "An old night train makes its last run, from a snowy mountain halt through a long tunnel to the sea, its lit windows going out one by one at the end of the line.",
+  "line_cn": "一列老夜车跑最后一趟：从雪山小站穿过长隧道开到海边，到站后车窗一扇扇熄灭。",
   "uses": [
-   "Festivals",
-   "Gift brands",
-   "Cultural stories"
+   "Journeys and travel",
+   "Farewells and anniversaries",
+   "Places and their stories"
   ],
-  "dur": 121.8
+  "dur": 51.0
  },
  {
   "slug": "risograph",
@@ -533,15 +550,32 @@
   "cn": "丝印旅行海报",
   "cat": "印刷与版画",
   "cat_en": "Print & Printmaking",
-  "film": "Three Trails",
-  "line": "Three trail posters are screen-printed one ink at a time, then climbed in one long take from noon to dusk.",
-  "line_cn": "三条步道各一张丝印海报，一色一刮印出来，再沿山脊一镜到底从正午爬到黄昏。",
+  "film": "The Long Way Home",
+  "line": "A traveller crosses the world one full-bleed screen print at a time, a ticket stub counting the distance from home, until the far side turns into the way back.",
+  "line_cn": "一张满屏丝印海报一座城，票根数着离家的公里数，走到世界的另一头，才发现那是回家的路。",
   "uses": [
    "Destination guides",
    "Tourism",
    "Event posters"
   ],
-  "dur": 38.4
+  "dur": 50.0
+ },
+ {
+  "slug": "printed-long-take",
+  "num": "75",
+  "en": "Printed Long Take",
+  "cn": "印刷长镜头",
+  "cat": "印刷与版画",
+  "cat_en": "Print & Printmaking",
+  "film": "Thirty-Three Cranes",
+  "line": "Red-crowned cranes in a Hokkaido valley, one scratchboard take, counted back from 33 to 1,927.",
+  "line_cn": "刮版画的北海道河谷一镜到底，丹顶鹤从 33 只数回到 1,927 只。",
+  "uses": [
+   "Journeys",
+   "Wildlife",
+   "Landscapes"
+  ],
+  "dur": 60.0
  },
  {
   "slug": "swiss-motion",
@@ -635,15 +669,15 @@
   "cn": "象形运动图形",
   "cat": "图形与排版",
   "cat_en": "Graphic & Type",
-  "film": "Aichi-Nagoya 2026 — All 43 Sports",
-  "line": "All 43 sports of the 2026 Asian Games as beat-locked geometric pictograms.",
-  "line_cn": "2026 亚运会 43 个大项，几何象形人卡着节拍快闪。",
+  "film": "Left Behind",
+  "line": "A yellow umbrella left on a bus waits out a sunny day on the lost-property shelf, then opens with 312 others when the storm comes back: objects, vehicles, weather and signs as beat-locked geometric pictograms.",
+  "line_cn": "一把被落在公交车上的黄伞，晴天里在失物招领的货架上等了一整天，暴雨回来时和另外 312 把一起撑开：物件、交通、天气和标识，都是卡着节拍的几何象形符号。",
   "uses": [
-   "Sports events",
-   "Visual identity",
-   "Event openers"
+   "Public services and city stories",
+   "Brand and event identity films",
+   "Explainers told through signs and objects"
   ],
-  "dur": 163.6
+  "dur": 50.0
  },
  {
   "slug": "ascii-crt",
@@ -746,6 +780,57 @@
    "Trade shows"
   ],
   "dur": 39.0
+ },
+ {
+  "slug": "transit-map",
+  "num": "72",
+  "en": "Transit Map",
+  "cn": "地铁线路图",
+  "cat": "信息与发布",
+  "cat_en": "Information & Keynote",
+  "film": "6 Kilometres",
+  "line": "A printed metro map grows from one 6 km line in 1993 to 21 lines and 906 km.",
+  "line_cn": "一张纸上的线路图，从 1993 年的 6 公里长到 21 条线、906 公里。",
+  "uses": [
+   "Transport",
+   "Growth over time",
+   "Networks"
+  ],
+  "dur": 47.0
+ },
+ {
+  "slug": "isometric-picture-book",
+  "num": "74",
+  "en": "Isometric Picture Book",
+  "cn": "等距绘本",
+  "cat": "信息与发布",
+  "cat_en": "Information & Keynote",
+  "film": "Seventy-Two Seats",
+  "line": "Travellers board an isometric plane, and the order shows why one way is nearly twice as fast.",
+  "line_cn": "等距的登机口和机舱里，小人按顺序登机，讲清哪种叫法快将近一半。",
+  "uses": [
+   "Everyday rules",
+   "Queues",
+   "Comparisons"
+  ],
+  "dur": 59.8
+ },
+ {
+  "slug": "circuit-board",
+  "num": "76",
+  "en": "Circuit Board",
+  "cn": "电路板",
+  "cat": "信息与发布",
+  "cat_en": "Information & Keynote",
+  "film": "Seven Milliseconds",
+  "line": "Rivers become copper traces as current runs 2,080 km from a dam to a phone charger.",
+  "line_cn": "江河变成电路板上的走线，电流从水坝跑 2,080 公里进手机充电器。",
+  "uses": [
+   "Energy",
+   "Supply chains",
+   "Devices"
+  ],
+  "dur": 60.0
  },
  {
   "slug": "rubber-hose",
@@ -1001,5 +1086,43 @@
    "Beauty"
   ],
   "dur": 32.0
+ },
+ {
+  "slug": "memphis-diorama",
+  "num": "71",
+  "en": "Memphis Diorama",
+  "cn": "孟菲斯微缩景观",
+  "cat": "材质与 3D",
+  "cat_en": "Materials & 3D",
+  "film": "Four Seasons in Pomelo Town",
+  "line": "One river bend, four seasons, one take; each turns when the big tree squats and springs back.",
+  "line_cn": "一个河湾一镜过完四季，大树一蹲一弹，就换一季。",
+  "uses": [
+   "Web heroes",
+   "Ambient loops",
+   "Seasons"
+  ],
+  "dur": 45.0,
+  "by": {
+   "name": "EianLu",
+   "url": "https://x.com/EianLu"
+  }
+ },
+ {
+  "slug": "desktop-flythrough",
+  "num": "77",
+  "en": "Desktop Flythrough",
+  "cn": "桌面穿梭",
+  "cat": "材质与 3D",
+  "cat_en": "Materials & 3D",
+  "film": "Before the Ding",
+  "line": "A cat photo hops across app cards on a sunlit desk, from one phone to a friend's.",
+  "line_cn": "一张猫照片跳过桌上的应用卡片，从一台手机飞到朋友手机里，一镜跟到底。",
+  "uses": [
+   "App explainers",
+   "Workflows",
+   "Products"
+  ],
+  "dur": 60.0
  }
 ]

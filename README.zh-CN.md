@@ -2,7 +2,7 @@
 
 # Lemo-Opuscar
 
-**一套用代码做片的风格工具箱：<!--n-->59<!--/n--> 种现成风格，也能做出你自己的。**<br>
+**一套用代码做片的风格工具箱：<!--n-->66<!--/n--> 种现成风格，也能做出你自己的。**<br>
 选一个风格，或者从头做一个，带上你的故事，让编程 agent 来当导演。
 
 <a href="https://lemomo-ai.github.io/lemo-opuscar/"><img alt="看图鉴" src="https://img.shields.io/badge/-%E2%96%B6%20%E7%9C%8B%E5%9B%BE%E9%89%B4-E8553A?style=for-the-badge"></a> <a href="README.md"><img alt="English" src="https://img.shields.io/badge/README-English-555?style=for-the-badge"></a> <a href="https://github.com/lemomo-ai/lemo-opuscar/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/lemomo-ai/lemo-opuscar?style=for-the-badge&color=F5B700&label=stars"></a> <a href="#授权"><img alt="MIT · CC BY 4.0" src="https://img.shields.io/badge/%E6%8E%88%E6%9D%83-MIT%20%C2%B7%20CC%20BY%204.0-2EA44F?style=for-the-badge"></a>
@@ -12,6 +12,7 @@
 ⚠️ **本插件为 Claude 专用。** 风格都是按 Claude Opus 5.5 调出来的，<br>
 其他模型适配度不高，请谨慎使用。
 
+🆕 **2026-10-29 · [7 种新风格](https://lemomo-ai.github.io/lemo-opuscar/)**：孟菲斯微缩景观（[@EianLu](https://x.com/EianLu) 提供）、地铁线路图、黑板粉笔、电路板等。[往下看 ↓](#风格)<br>
 🆕 **2026-10-22 · 新分类[「剪辑与纪实」](https://lemomo-ai.github.io/lemo-opuscar/#edit-documentary)**：8 种风格，用真实的档案、文件和数据剪成。[往下看 ↓](#剪辑与纪实)<br>
 🆕 **2026-10-22 · 新玩法[「改成你自己的风格」](#改成你自己的风格)**：改库里的风格或从空白做，存成你自己的。[往下看 ↓](#改成你自己的风格)<br>
 🆕 **2026-10-16 · 新分类[「实证影像」](https://lemomo-ai.github.io/lemo-opuscar/#evidence-films)**：8 种风格，拍真实素材，每个数字都有出处。[往下看 ↓](#实证影像)
@@ -120,7 +121,7 @@ agent 会读三份指南，像一个小工作室一样开工。<br>
 
 > 从空白开始，做一个黑板粉笔画的风格，暖一点、慢一点。
 
-- **改库里的风格**：它列出全部 59 种和画廊链接，你打字说改哪一个。
+- **改库里的风格**：它列出全部风格和画廊链接，你打字说改哪一个。
 - **从空白开始**：用你自己的话描述想要的样子，也可以给一张喜欢的图或一支片。Claude 从库里挑一个最接近的风格当技法底子，说清楚为什么选它，你点头或者换一个。
 
 **接下来五步：**
@@ -143,7 +144,7 @@ agent 会读三份指南，像一个小工作室一样开工。<br>
 ### 开始之前
 
 - 一支片子 agent 大约要做 30–60 分钟，token 用量不小。
-- 需要 Node 20+、ffmpeg 和 Python 3.11+（或 [uv](https://docs.astral.sh/uv/)），其余由 agent 安装。
+- 需要 Node 20+、ffmpeg 7+ 和 Python 3.11+（或 [uv](https://docs.astral.sh/uv/)），其余由 agent 安装。Ubuntu 24.04 自带的 ffmpeg 是 6.1，版本太旧，请换成[静态版](https://johnvansickle.com/ffmpeg/)。
 - 默认输出 1920×1080、24 fps，其他尺寸可以指定。
 
 ### 更新和卸载
@@ -171,6 +172,24 @@ claude plugin uninstall lemo-opuscar@lemolab
 点图片看它的 `STYLE.md`。
 
 <!-- styles:start -->
+
+### 🆕 最新 · 2026-10-29
+
+<table>
+<tr>
+<td width="33%" valign="top"><a href="styles/memphis-diorama/STYLE.md"><img src="docs/frames/memphis-diorama.jpg" alt="孟菲斯微缩景观"></a><br><b>孟菲斯微缩景观</b><br>Memphis Diorama<br><i>Four Seasons in Pomelo Town</i><br><sub>一个河湾一镜过完四季，大树一蹲一弹，就换一季。</sub><br><sub>由 <a href="https://x.com/EianLu">@EianLu</a> 提供</sub></td>
+<td width="33%" valign="top"><a href="styles/transit-map/STYLE.md"><img src="docs/frames/transit-map.jpg" alt="地铁线路图"></a><br><b>地铁线路图</b><br>Transit Map<br><i>6 Kilometres</i><br><sub>一张纸上的线路图，从 1993 年的 6 公里长到 21 条线、906 公里。</sub></td>
+<td width="33%" valign="top"><a href="styles/chalkboard/STYLE.md"><img src="docs/frames/chalkboard.jpg" alt="黑板粉笔"></a><br><b>黑板粉笔</b><br>Chalkboard<br><i>The Story of Chinese Characters</i><br><sub>粉笔写下网上的说法，再一擦，把「射」写回三千年前。</sub></td>
+</tr>
+<tr>
+<td width="33%" valign="top"><a href="styles/isometric-picture-book/STYLE.md"><img src="docs/frames/isometric-picture-book.jpg" alt="等距绘本"></a><br><b>等距绘本</b><br>Isometric Picture Book<br><i>Seventy-Two Seats</i><br><sub>等距的登机口和机舱里，小人按顺序登机，讲清哪种叫法快将近一半。</sub></td>
+<td width="33%" valign="top"><a href="styles/printed-long-take/STYLE.md"><img src="docs/frames/printed-long-take.jpg" alt="印刷长镜头"></a><br><b>印刷长镜头</b><br>Printed Long Take<br><i>Thirty-Three Cranes</i><br><sub>刮版画的北海道河谷一镜到底，丹顶鹤从 33 只数回到 1,927 只。</sub></td>
+<td width="33%" valign="top"><a href="styles/circuit-board/STYLE.md"><img src="docs/frames/circuit-board.jpg" alt="电路板"></a><br><b>电路板</b><br>Circuit Board<br><i>Seven Milliseconds</i><br><sub>江河变成电路板上的走线，电流从水坝跑 2,080 公里进手机充电器。</sub></td>
+</tr>
+<tr>
+<td width="33%" valign="top"><a href="styles/desktop-flythrough/STYLE.md"><img src="docs/frames/desktop-flythrough.jpg" alt="桌面穿梭"></a><br><b>桌面穿梭</b><br>Desktop Flythrough<br><i>Before the Ding</i><br><sub>一张猫照片跳过桌上的应用卡片，从一台手机飞到朋友手机里，一镜跟到底。</sub></td>
+</tr>
+</table>
 
 ### 剪辑与纪实
 
@@ -237,7 +256,7 @@ claude plugin uninstall lemo-opuscar@lemolab
 <td width="33%" valign="top"><a href="styles/papercut-red/STYLE.md"><img src="docs/frames/papercut-red.jpg" alt="红色窗花剪纸"></a><br><b>红色窗花剪纸</b><br>Red Paper-cut<br><i>Nian Comes to Town</i><br><sub>除夕年兽进村，小女孩剪出的大窗花照亮全村，把它吓跑。</sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top"><a href="styles/paper-lantern/STYLE.md"><img src="docs/frames/paper-lantern.jpg" alt="纸雕灯影"></a><br><b>纸雕灯影</b><br>Paper-cut Lightbox<br><i>A Mooncake&#x27;s Longing</i><br><sub>一枚月饼讲中秋的团圆与思念，纸雕灯箱层层透光。</sub></td>
+<td width="33%" valign="top"><a href="styles/paper-lantern/STYLE.md"><img src="docs/frames/paper-lantern.jpg" alt="纸雕灯影"></a><br><b>纸雕灯影</b><br>Paper-cut Lightbox<br><i>The Last Night Train</i><br><sub>一列老夜车跑最后一趟：从雪山小站穿过长隧道开到海边，到站后车窗一扇扇熄灭。</sub></td>
 </tr>
 </table>
 
@@ -251,7 +270,7 @@ claude plugin uninstall lemo-opuscar@lemolab
 </tr>
 <tr>
 <td width="33%" valign="top"><a href="styles/engraving/STYLE.md"><img src="docs/frames/engraving.jpg" alt="铜版画"></a><br><b>铜版画</b><br>Copperplate Engraving<br><i>The Honeybee, Plate VII</i><br><sub>一张博物志图版自己刻出来：雕刀推开铜版，蜜蜂一线线成形，最后手工水彩上色。</sub></td>
-<td width="33%" valign="top"><a href="styles/silkscreen-poster/STYLE.md"><img src="docs/frames/silkscreen-poster.jpg" alt="丝印旅行海报"></a><br><b>丝印旅行海报</b><br>Silkscreen Travel Poster<br><i>Three Trails</i><br><sub>三条步道各一张丝印海报，一色一刮印出来，再沿山脊一镜到底从正午爬到黄昏。</sub></td>
+<td width="33%" valign="top"><a href="styles/silkscreen-poster/STYLE.md"><img src="docs/frames/silkscreen-poster.jpg" alt="丝印旅行海报"></a><br><b>丝印旅行海报</b><br>Silkscreen Travel Poster<br><i>The Long Way Home</i><br><sub>一张满屏丝印海报一座城，票根数着离家的公里数，走到世界的另一头，才发现那是回家的路。</sub></td>
 </tr>
 </table>
 
@@ -266,7 +285,7 @@ claude plugin uninstall lemo-opuscar@lemolab
 <tr>
 <td width="33%" valign="top"><a href="styles/blueprint/STYLE.md"><img src="docs/frames/blueprint.jpg" alt="蓝图 / 工程制图"></a><br><b>蓝图 / 工程制图</b><br>Blueprint<br><i>Patent Pending: The Cloud Catcher</i><br><sub>发明家的蓝图自己画出一台接云机器，修订云线变成了真的雨云。</sub></td>
 <td width="33%" valign="top"><a href="styles/stained-glass/STYLE.md"><img src="docs/frames/stained-glass.jpg" alt="彩色玻璃窗"></a><br><b>彩色玻璃窗</b><br>Stained Glass<br><i>The Dragon of the East Window</i><br><sub>阳光从清晨移到黄昏，照到哪一格花窗，哪一格的故事就动起来。</sub></td>
-<td width="33%" valign="top"><a href="styles/pictogram-motion/STYLE.md"><img src="docs/frames/pictogram-motion.jpg" alt="象形运动图形"></a><br><b>象形运动图形</b><br>Pictogram Motion<br><i>Aichi-Nagoya 2026 — All 43 Sports</i><br><sub>2026 亚运会 43 个大项，几何象形人卡着节拍快闪。</sub></td>
+<td width="33%" valign="top"><a href="styles/pictogram-motion/STYLE.md"><img src="docs/frames/pictogram-motion.jpg" alt="象形运动图形"></a><br><b>象形运动图形</b><br>Pictogram Motion<br><i>Left Behind</i><br><sub>一把被落在公交车上的黄伞，晴天里在失物招领的货架上等了一整天，暴雨回来时和另外 312 把一起撑开：物件、交通、天气和标识，都是卡着节拍的几何象形符号。</sub></td>
 </tr>
 <tr>
 <td width="33%" valign="top"><a href="styles/ascii-crt/STYLE.md"><img src="docs/frames/ascii-crt.jpg" alt="ASCII / CRT 终端"></a><br><b>ASCII / CRT 终端</b><br>ASCII / CRT Terminal<br><i>Tranquility.log</i><br><sub>月球基地的 AI 沉睡 40 年后被唤醒，用字符画出“家”来回复。</sub></td>

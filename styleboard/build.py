@@ -15,6 +15,8 @@ BLOB_URL = f'https://github.com/{REPO}/blob/main'
 CATEGORIES = [('剪辑与纪实', 'Edit & Documentary'), ('实证影像', 'Evidence Films'), ('手绘与绘画', 'Hand-drawn & Painting'), ('东方传统', 'East Asian Traditions'), ('印刷与版画', 'Print & Printmaking'),
               ('图形与排版', 'Graphic & Type'), ('信息与发布', 'Information & Keynote'), ('卡通与动画', 'Cartoon & Anime'),
               ('游戏', 'Games'), ('电影与时代', 'Cinema & Eras'), ('材质与 3D', 'Materials & 3D')]
+# The latest release's styles: the README shows them in a group of their own above the categories (and not again in their category). Empty it to drop the group.
+NEWEST = ('2026-10-29', ['memphis-diorama', 'transit-map', 'chalkboard', 'isometric-picture-book', 'printed-long-take', 'circuit-board', 'desktop-flythrough'])
 FIELDS = ('slug', 'num', 'en', 'cn', 'category_en', 'category_cn', 'film', 'line', 'line_cn', 'uses', 'frame_sec', 'dur')
 
 
@@ -49,7 +51,8 @@ def load_styles(refresh_dur):
                 j['dur'] = round(d, 1)
                 open(p, 'w', encoding='utf-8').write(json.dumps(j, ensure_ascii=False, indent=1) + '\n')
         out.append(dict(slug=slug, num=j['num'], en=j['en'], cn=j['cn'], cat=j['category_cn'], cat_en=j['category_en'],
-                        film=j['film'], line=j['line'], line_cn=j['line_cn'], uses=j['uses'], dur=j['dur'], frame_sec=j['frame_sec']))
+                        film=j['film'], line=j['line'], line_cn=j['line_cn'], uses=j['uses'], dur=j['dur'], frame_sec=j['frame_sec'],
+                        **({'by': j['by']} if j.get('by') else {})))   # optional {"name", "url"}: a style contributed from outside, credited on its card and README cell
     if bad: raise SystemExit('styleboard/build.py:\n  ' + '\n  '.join(bad))
     order = {c: i for i, c in enumerate(CATEGORIES)}
     out.sort(key=lambda s: (order.get((s['cat'], s['cat_en']), 99), int(re.match(r'\d+', s['num']).group()), s['num']))
@@ -113,6 +116,12 @@ def laurel_symbol():
 
 def mmss(d): r = round(d); return f'{r // 60}:{r % 60:02d}'
 
+def by_line(s):
+    b = s.get('by')
+    if not b: return ''
+    a = f'<a href="{esc(b["url"])}" target="_blank" rel="noopener">@{esc(b["name"])}</a>'
+    return f'    <p class="by">Contributed by {a}<span>由 {a} 提供</span></p>\n'
+
 def card(s):
     img = f'img/{s["imgs"][0]}' if s['imgs'] else s.get('poster', '')
     vid = bool(s.get('video'))
@@ -130,6 +139,7 @@ def card(s):
             f'    <h3>{esc(s["en"])}</h3><p class="cn">{esc(s["cn"])}</p>\n'
             f'    <p class="for">for <em>{esc(film)}</em></p>\n'
             f'    <p class="line">{esc(s.get("line", ""))}</p><p class="line-cn">{esc(s.get("line_cn", ""))}</p>\n'
+            f'{by_line(s)}'
             f'    {f"<ul class=uses aria-label=\"Best for\">{uses}</ul>" if uses else ""}\n'
             f'    <nav class="links">{"".join(links)}</nav>\n'
             f'  </div>\n</article>')
@@ -354,14 +364,23 @@ if site:   # Pages site: pages + style frames + posters + llms.txt + sitemap
         + ''.join(f'  <url><loc>{u}</loc></url>\n' for u in (SITE_URL, FILM_URL, THANKS_URL)) + '</urlset>\n')
 
 
+def readme_by(s, zh):
+    b = s.get('by')
+    if not b: return ''
+    a = f'<a href="{html.escape(b["url"])}">@{html.escape(b["name"])}</a>'
+    return f'<br><sub>由 {a} 提供</sub>' if zh else f'<br><sub>Contributed by {a}</sub>'
+
+
 def readme_grid(zh):
     """README.md (English) and README.zh-CN.md (Chinese, with the English name under it), between <!-- styles:start --> and <!-- styles:end -->:
     image grid by category (docs/frames/<slug>.jpg)."""
     out = []
-    for cn, en in cats:
-        group = [x for x in styles if x['cat'] == cn and x['stylemd']]
+    newest = [next(x for x in styles if x['slug'] == slug) for slug in NEWEST[1]]
+    groups = [((f'🆕 最新 · {NEWEST[0]}' if zh else f'🆕 New · {NEWEST[0]}'), newest)] if newest else []
+    groups += [((cn if zh else en), [x for x in styles if x['cat'] == cn and x['stylemd'] and x['slug'] not in NEWEST[1]]) for cn, en in cats]
+    for title, group in groups:
         if not group: continue
-        out.append(f'\n### {cn if zh else en}\n\n<table>')
+        out.append(f'\n### {title}\n\n<table>')
         for i in range(0, len(group), 3):
             out.append('<tr>')
             for s in group[i:i + 3]:
@@ -371,7 +390,7 @@ def readme_grid(zh):
                 else:
                     name, alt, line = f'<b>{html.escape(s["en"])}</b>', s['en'], s['line']
                 out.append(f'<td width="33%" valign="top"><a href="styles/{s["slug"]}/STYLE.md"><img src="docs/frames/{s["slug"]}.jpg" alt="{html.escape(alt)}"></a><br>'
-                           f'{name}<br><i>{html.escape(s["film"])}</i><br><sub>{html.escape(line)}</sub></td>')
+                           f'{name}<br><i>{html.escape(s["film"])}</i><br><sub>{html.escape(line)}</sub>{readme_by(s, zh)}</td>')
             out.append('</tr>')
         out.append('</table>')
     return '\n'.join(out) + '\n'
