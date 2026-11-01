@@ -16,3 +16,13 @@ Next closest: dataviz (map charts, but no paper ground or typed narration), visu
 | §9 Pitfalls | imagery licences, float precision | facts verified or marked 示意; no "代码生成"/watermark in picture; font loading; heavy SVG renders hang → chunked renders | lessons from the Yancheng film |
 | §10 Engine | Lemo core/render + WebGL plate shader | Remotion + SVG kit /workspace/templates/dark-map-explainer; demo source in demo/ | proven pipeline |
 | Size | 1920×1080 | 1920×1080 | unchanged (landscape) |
+
+## 2026-11-01 — Camera and animation freed; anti-references named
+
+User decision: camera and animation are left to the model, designed to a professional standard, with one rule only — **don't make anyone dizzy**. The Shanghai film was judged too flat (camera barely moves, boundaries only change colour, text and numbers only fade in); the topic is paused.
+
+- Removed every hard camera limit: peak zoom ≤ 40 %/s, centre pan ≤ ~170 px/s, one move per beat of 3.5–5 s, ≥ 1 s still between moves, "the camera mostly doesn't move", "calm / slow 2D camera", "no orbit / tilt / whip / sudden climbs or dives", and "run `camrate.ts` before every render" (STYLE §1, §5, §6, §9, §10, §11; style.json; DEMO.md).
+- `camrate.ts` stays as an optional reference tool, not an acceptance gate (kit and demo). The kit's `tokens.CAMERA` limits were deleted.
+- Low-res preview is optional, no longer a required step; `demo/build.sh` now defaults to 1080p.
+- Added: the Yancheng and Shanghai films are anti-references for pacing and animation; 来龙去脉's Haikou (海口) film is the reference to study for richness.
+- The §5 / §6 rows in the table above describe the old limits and are kept as history.

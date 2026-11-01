@@ -26,7 +26,7 @@ export const V: Record<string, Cam> = {
   WETS: { fx: 210, fy: 90, sx: 1180, sy: 610, z: 1.42 },
 };
 const p = PT;
-// 每个镜头只做一次慢动作，动作之间静止（ease in-out）
+// 盐城片当时的写法（每段一次慢动作、动作间静止）。这是反面参照，不是规定：新片运镜自由发挥，别让人头晕即可
 export const MOVES: { at: number; dur: number; to: string }[] = [
   { at: 0.3, dur: 5.2, to: "REG" },
   { at: p[3].s - 0.6, dur: 4.0, to: "CITY" },

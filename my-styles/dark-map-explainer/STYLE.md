@@ -2,7 +2,7 @@
 
 Made from a blank page; techniques from Satellite Briefing (satellite-briefing) in Lemo-Opuscar.
 
-> The history and geography of one real place, told on a dark-brown paper map drawn entirely in code. There is no voice: the story is typed, glyph by glyph, in a heavy Chinese serif at the top left, and the map answers it — a river glows as it is drawn, a coastline moves outward like tree rings, a number lands on a card with a leader line to the spot it belongs to. The camera only pushes and slides, slowly, and rests between moves.
+> The history and geography of one real place, told on a dark-brown paper map drawn entirely in code. There is no voice: the story is typed, glyph by glyph, in a heavy Chinese serif at the top left, and the map answers it — a river glows as it is drawn, a coastline moves outward like tree rings, a number lands on a card with a leader line to the spot it belongs to. Camera and animation are designed freely, to a professional standard; the only rule is: don't make anyone dizzy.
 > Reference (grammar only): the Douyin account 来龙去脉's 2D map explainers. Copy none of its layouts, maps or text; never name it in the film.
 
 **Build note — read first.** This style does **not** use Lemo's `core/render`. Films are built in Remotion + SVG (TypeScript) on the kit **`/workspace/templates/dark-map-explainer`** (tokens + optional components + render/audio/QA scripts; its `README.md` has the commands). Copy the kit per film and write the film's own composition. See §10. The style fixes only what is below; everything else is the film's own (§11).
@@ -11,11 +11,12 @@ Made from a blank page; techniques from Satellite Briefing (satellite-briefing) 
 
 - **A real place on a drawn map.** Real geometry (OSM, Natural Earth, published maps) in one projection, drawn as flat vector on a dark paper ground. What can't be known exactly (old coastlines, routes, people) is drawn and marked 示意.
 - **The words are the narration.** One short beat of text at a time, typed at reading speed at the top left; the map shows what the sentence says while you read it.
-- **Time is drawn on the ground**: boundaries advance, lines draw, places light up — the map changes, the camera mostly doesn't.
-- **Calm.** Few elements per beat, slow 2D camera, long readable holds.
+- **Time is drawn on the ground**: boundaries advance, lines draw, places light up — the map acts the sentence out.
+- **Camera and animation are free.** Design them as a professional motion designer would; the only rule is **don't make anyone dizzy**.
+- **Anti-references**: the Yancheng (盐城) and Shanghai (上海) films are slow and flat (camera barely moves, boundaries only change colour, text and numbers only fade in). Don't copy their pacing or animation. The reference worth studying is 来龙去脉's Haikou (海口) film, for its richness.
 - **Facts are real.** Dates, numbers, quotes are verified; a quote shows its source on screen.
 
-Not Satellite Briefing (no photographs, no globe, no orbit or dive), not Data Storytelling (a map with a story, not a chart with axes), not a slideshow (no title cards, no chapter headers, no hard cuts), not a talking-head or voice-over film, not 3D (no tilt, no white-model city).
+Not Satellite Briefing (no photographs, no globe), not Data Storytelling (a map with a story, not a chart with axes), not a slideshow (no title cards, no chapter headers, no hard cuts), not a talking-head or voice-over film, not a 3D white-model city.
 
 ## 2. Materials & rendering
 
@@ -44,23 +45,20 @@ Not Satellite Briefing (no photographs, no globe, no orbit or dive), not Data St
 
 ## 5. Motion quality
 
-- Things arrive by being made: lines draw from head to tail, rings advance, a point flares and pulses, a card fades up with its leader line drawing to the map, a scroll unrolls.
-- Easing is soft (sine / cubic in-out); nothing bounces.
-- **Between camera moves the camera is still** (≥ 1 s); change comes from the map. One idea moves at a time.
-- Particles (sediment, birds) are slow and sparse.
+- Free, designed to a professional standard; the only rule is **don't make anyone dizzy**. Camera, map animation, type and cards may move together and overlap.
+- Things can arrive by being made (a line drawing itself, a boundary advancing, a card landing with its leader); these are examples, not a checklist.
 
 ## 6. Camera grammar
 
 | Move | What it expresses | Can serve |
 |---|---|---|
-| Slow push toward a point | singling out | a town, a dike, a battlefield |
-| Slow pull back | context, consequence | the whole region; a river from its source |
+| Push toward a point | singling out | a town, a dike, a battlefield |
+| Pull back | context, consequence | the whole region; a river from its source |
 | Slide at one scale | following a line | a coast, a road, a front |
 | Locked frame | time running in one place | rings advancing, a line drawing, cards |
 
-- 2D only: zoom and pan of one flat map, heading fixed (north up). Zoom about a fixed point (no extra drift).
-- One move per beat, **3.5–5 s**, sine-eased; **peak zoom ≤ 40 %/s, centre motion ≤ ~170 px/s at 1080p** — measured with the kit's `scripts/camrate.ts` before every render.
-- Transitions are zooms and dissolves of map layers; **no hard cuts, no orbit, no tilt, no whip pans, no sudden climbs or dives**.
+- The table is a vocabulary, not a rulebook. Camera and animation are free, designed to a professional standard; the only rule is **don't make anyone dizzy**.
+- The kit's `scripts/camrate.ts` is an optional reference tool that prints each move's zoom and pan speed; it is not an acceptance gate.
 
 ## 7. Sound palette
 
@@ -84,7 +82,8 @@ Not Satellite Briefing (no photographs, no globe, no orbit or dive), not Data St
 
 - **Facts**: years, numbers, names and quotes only from checked sources; a quote that can't be checked is not put in a scroll. Historic lines, routes and people are 示意, said in the corner note.
 - **Never** write "代码生成" or put a watermark in the picture; the "made with code" positioning lives in the title, description and tags only.
-- **Dizziness**: the user is sensitive. Keep the §6 limits and the still holds; run `camrate.ts`. A 3D camera was tried and rejected.
+- **Dizziness**: the user is sensitive; whatever the camera does, it must not make anyone dizzy. (A 3D white-model camera was tried once and dropped.)
+- **Flatness**: a camera that barely moves, boundaries that only change colour and numbers that only fade in read as dull (the Yancheng and Shanghai films). Study the Haikou reference for richness.
 - **Too dark**: check a frame on a phone; the coast and land must separate from the sea.
 - **Text density**: more than 5 lines or more than two emphasis words per beat is unreadable on a phone; split the beat.
 - **Overlaps**: cards can cover labels or the text block; check every card's frame (the Yancheng film shipped with a 2019 card half-covering a label at 113 s).
@@ -95,17 +94,17 @@ Not Satellite Briefing (no photographs, no globe, no orbit or dive), not Data St
 ## 10. Engine
 
 **Remotion 4 + SVG, TypeScript — not Lemo's `core/render`.** Kit: `/workspace/templates/dark-map-explainer` (`README.md` = commands and the user's hard rules).
-- `src/tokens.ts`: colours, fonts, type metrics, safe area, camera limits, grain, audio targets.
-- `src/lib/`: `geo.ts` (projection, GeoJSON → path, partial lines), `camera.ts` (camera, zoom about a fixed point, rate check), `time.ts` (easing, ramps), `fonts.ts`.
+- `src/tokens.ts`: colours, fonts, type metrics, safe area, grain, audio targets.
+- `src/lib/`: `geo.ts` (projection, GeoJSON → path, partial lines), `camera.ts` (camera, zoom about a fixed point, optional rate measurement), `time.ts` (easing, ramps), `fonts.ts`.
 - `src/components/` (all optional): `MapStage`, `MapBase`, `PaperGrain`, `TypeParagraph` + `planParagraphs`, `InfoCard` + `BigNumber`, `Scroll`, `TimelineBar`, `GlowLine`, `Ruler`, `RingAdvance`, `GlowPoint` / `MapLabel`, `ParticleFlow`, `CornerNote`, `CoverStill`.
-- `scripts/`: `render_chunks.sh`, `finish.sh`, `camrate.ts`, `stills.mjs`, `contact_sheet.py`, `covers.sh`, `events.ts`; `audio/sfx.py`, `audio/master.py`.
+- `scripts/`: `render_chunks.sh`, `finish.sh`, `camrate.ts` (optional reference), `stills.mjs`, `contact_sheet.py`, `covers.sh`, `events.ts`; `audio/sfx.py`, `audio/master.py`.
 - Example film: [`demo/`](demo/) (see [DEMO.md](DEMO.md)) — `src/Main.tsx` (whole film), `src/Text.tsx` (typing), `src/geo.ts` (projection, rings, camera moves), `src/Art.tsx` (silhouettes), `scripts/make_audio.py`.
 - Technique base for map-in-world-coordinates, rings and range line: `$LIB/styles/satellite-briefing/STYLE.md`.
-- Workflow: Grok skill `dark-map-explainer`. Low-res preview + keyframe sheet to the user first; 1080p only after they confirm. Deliver the mp4 plus separately composed 3:4 and 4:3 covers.
+- Workflow: Grok skill `dark-map-explainer`. Render 1080p directly (a low-res preview is optional) and self-check a keyframe sheet. Deliver the mp4 plus separately composed 3:4 and 4:3 covers.
 
 ## 11. Variation space
 
-Free in every film, and expected to be re-invented: the place and topic, story and structure, number and length of beats, total length, opening and ending, which native moves appear (any can be left out), new components (sections, split comparisons, illustrations — any 2D technique), the camera path within §6's limits, card and scroll designs, SFX, the size (a vertical 1080×1920 cut is fine with the text block re-laid). Fixed: the §3 colour logic, the typed top-left serif telling, calm 2D camera limits, no voice by default with the user's score at constant level, verified facts with 示意 marked, no "代码生成" or watermark in the picture.
+Free in every film, and expected to be re-invented: the place and topic, story and structure, number and length of beats, total length, opening and ending, which native moves appear (any can be left out), new components (sections, split comparisons, illustrations — any 2D technique), camera and animation (free; just don't make anyone dizzy), card and scroll designs, SFX, the size (a vertical 1080×1920 cut is fine with the text block re-laid). Fixed: the §3 colour logic, the typed top-left serif telling, no voice by default with the user's score at constant level, verified facts with 示意 marked, no "代码生成" or watermark in the picture.
 
 ---
 

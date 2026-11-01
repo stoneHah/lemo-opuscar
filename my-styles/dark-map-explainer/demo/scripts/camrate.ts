@@ -1,3 +1,4 @@
+// 可选参考工具：打印各镜头动作的速度，不是验收门槛（运镜自由发挥，别让人头晕即可）
 import { camAt, proj, MOVES } from "../src/geo";
 import { DURATION } from "../src/timeline";
 const dt = 1 / 30; let mz = 0, mp = 0, mzT = 0, mpT = 0;

@@ -7,6 +7,6 @@
  "library_version": "413a6bd",
  "created": "2026-11-01",
  "engine": "remotion (dark-map-explainer kit), not lemo core/render",
- "line": "Dark paper-grain 2D vector maps that tell the history and geography of a real place: no voice, the story is typed in heavy serif at the top left, coastlines and borders move like tree rings, the camera only pushes and slides slowly.",
- "line_cn": "暗棕纸纹 2D 矢量动态地图讲一个真实地方的来龙去脉：无旁白，左上粗宋体逐字讲述，海岸线和边界像年轮一样推移，镜头只做慢推慢移。"
+ "line": "Dark paper-grain 2D vector maps that tell the history and geography of a real place: no voice, the story is typed in heavy serif at the top left, coastlines and borders move like tree rings, camera and animation are free, just never dizzying.",
+ "line_cn": "暗棕纸纹 2D 矢量动态地图讲一个真实地方的来龙去脉：无旁白，左上粗宋体逐字讲述，海岸线和边界像年轮一样推移，运镜和动画自由发挥、不晕。"
 }

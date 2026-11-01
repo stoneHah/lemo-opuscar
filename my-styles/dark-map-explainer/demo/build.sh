@@ -2,14 +2,14 @@
 # Rebuild the Yancheng demo ("盐城，是从海里长出来的", 143.9 s) from this folder.
 # Engine: Remotion + SVG (TypeScript), NOT Lemo's core/render. Style kit: /workspace/templates/dark-map-explainer.
 #   OUT=…            where everything is written (default /workspace/dark-map-explainer-demo; never inside demo/)
-#   SCALE=0.5|1      0.5 = low-res preview (default), 1 = 1080p
+#   SCALE=1|0.5      1 = 1080p (default), 0.5 = optional low-res check
 #   FRAMES=a-b       render only these frames (quick check), e.g. FRAMES=1500-1529
 #   MUSIC=…          the user's own score (not shipped; default the "老配乐" path below). Missing → silent film
 #   NODE_MODULES=…   an existing node_modules with Remotion 4.0.536 to link instead of `npm i`
 LIB=/workspace/lemo-opuscar   # Lemo-Opuscar library (not used by this engine; kept for convention)
 TEMPLATE=${TEMPLATE:-/workspace/templates/dark-map-explainer}
 OUT=${OUT:-/workspace/dark-map-explainer-demo}
-SCALE=${SCALE:-0.5}
+SCALE=${SCALE:-1}
 MUSIC=${MUSIC:-/workspace/blackgold-template/assets/music.mp3}
 FONT_URL=https://github.com/notofonts/noto-cjk/raw/main/Serif/SubsetOTF/SC/NotoSerifSC-Black.otf
 set -euo pipefail
@@ -28,7 +28,7 @@ fi
 if [ ! -e node_modules ]; then
   if [ -n "${NODE_MODULES:-}" ] && [ -d "$NODE_MODULES" ]; then ln -s "$NODE_MODULES" node_modules; else npm i --no-audit --no-fund; fi
 fi
-npx --no-install tsx scripts/camrate.ts | tail -1
+npx --no-install tsx scripts/camrate.ts | tail -1   # optional reference only, not a gate
 # audio: code-synth SFX + the user's score looped at constant level → −14 LUFS master
 if [ -s "$MUSIC" ]; then
   npx --no-install tsx scripts/events.ts > audio/events.json
